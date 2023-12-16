@@ -1,0 +1,40 @@
+version: "3.7"
+
+services:
+
+  app:
+    build: .
+    volumes:
+      - ./src:/src:rw
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+    ports:
+      - 8000:8000
+
+  mongo:
+    image: mongo:4.4.8
+    volumes:
+      - ./mongo_data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongo
+      - MONGO_INITDB_ROOT_PASSWORD=mongo
+    command:
+      [ "--auth" ]
+    ports:
+      - "27017:27017"
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    command:
+      - "start"
+      - "--all"
+      - "--config"
+      - "/etc/ngrok.yml"
+    volumes:
+      - ./ngrok.yml:/etc/ngrok.yml
+    ports:
+      - 4040:4040
+    depends_on:
+      - app

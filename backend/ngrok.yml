@@ -1,0 +1,7 @@
+authtoken: 2XLlfMsUqmsm1T7Rld9nFXtM4ZZ_5H8YDSzmeoTLHRKZufuHT
+version: 2
+tunnels:
+   backend:
+     addr: app:8000
+     proto: http
+     hostname: capital-eagle-smiling.ngrok-free.app
