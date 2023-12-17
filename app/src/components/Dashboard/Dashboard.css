@@ -1,0 +1,45 @@
+.title-dashboard {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.flex-center {
+    display: grid;
+    height: 70%;
+    margin: auto;
+    width: 90% !important;
+    align-items: center;
+    justify-items: center;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.menu {
+    height: 120px;
+}
+
+.round {
+    border-radius: 20px !important;
+}
+
+ion-button::part(native) {
+    height: 100px;
+    border-radius: 20% !important;
+}
+
+.shadow {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.action-menu {
+    background-color: #ed4d4d;
+}
+
+.pbac-score {
+    font-weight: bold;
+    font-size: 25px;
+}
